@@ -84,3 +84,26 @@ leftButton.addEventListener("click", () => {
     };
     slide[i].style.display = "flex";
 })
+
+// fotter com
+let addButton = document.querySelectorAll(".addButton");
+
+
+addButton.forEach(element => {
+    element.addEventListener("click", () => {
+        let paragraph = element.closest(".conteiner");
+        paragraph = paragraph.querySelector(".paragraph p:last-child");
+        
+        if(element.classList[1] === "icon-animation"){
+            element.classList.remove("icon-animation");
+            paragraph.classList.remove("paragraph-animation");
+            paragraph.classList.add("paragraph-animation-reverse");
+            paragraph.style.display = "none";
+        }else{
+            element.classList.add("icon-animation");
+            paragraph.style.display = "block";
+            paragraph.classList.remove("paragraph-animation-reverse");
+            paragraph.classList.add("paragraph-animation");
+        };
+    })
+})
